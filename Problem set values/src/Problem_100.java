@@ -7,8 +7,7 @@ public class Problem_100
         Scanner scan = new Scanner(System.in);
         int min = scan.nextInt();
         int max = scan.nextInt();
-        while (true)
-        {
+
             int maxCount = 1;
 
             for (int i = min; i <= max; i++)
@@ -20,9 +19,6 @@ public class Problem_100
                 }
             }
             System.out.println(min + " " + max + " " + maxCount);
-            min = scan.nextInt();
-            max = scan.nextInt();
-        }
     }
 
     public static int cycleCount(int count, int n)
@@ -35,17 +31,14 @@ public class Problem_100
             {
                 n = n / 2;
                 count++;
-                cycleCount (count, n);
 
             }
             else
             {
                 count += 2;
                 n = ((n * 3) + 1) / 2;
-                cycleCount(count, n);
             }
+            return cycleCount (count, n);
         }
-        return count;
     }
-
 }
